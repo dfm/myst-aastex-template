@@ -63,23 +63,23 @@
 
 [-CONTENT-]
 
-[# if part.acknowledgments #]
+[# if parts.acknowledgments #]
 \begin{acknowledgments}
-[- part.acknowledgments -]
+[- parts.acknowledgments -]
 \end{acknowledgments}
 [# endif #]
 
-[# if part.facilities #]
-\facilities{[- part.facilities -]}
+[# if parts.facilities #]
+\facilities{[- parts.facilities -]}
 [# endif #]
 
-[# if part.software #]
-\software{[- part.software -]}
+[# if parts.software #]
+\software{[- parts.software -]}
 [# endif #]
 
-[# if part.appendix #]
+[# if parts.appendix #]
 \appendix
-[- part.appendix -]
+[- parts.appendix -]
 [# endif #]
 
 [# if doc.bibliography #]
