@@ -51,6 +51,13 @@ doc:
     required: true
   - id: authors
   - id: bibliography
+  - id: keywords
+    description: >
+      The AAS Journals now uses Unified Astronomy Thesaurus concepts:
+      https://astrothesaurus.org
+      You will be asked to selected these concepts during the submission process
+      but this old "keyword" functionality is maintained in case authors want
+      to include these concepts in their preprints.
 
 options:
   - id: style
