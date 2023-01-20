@@ -1,0 +1,138 @@
+jtex: v1
+title: 'AASTeX'
+description: 'LaTeX template for the AAS Journals'
+version: 1.0.0
+license: MIT
+source: 'https://journals.aas.org/aastex-package-for-manuscript-preparation/'
+thumbnail: ./thumbnail.png
+authors:
+  - name: 'Dan Foreman-Mackey'
+
+    website: 'https://github.com/dfm/myst-aastex-template'
+    affiliations:
+      - 'Flatiron Institute'
+tags:
+  - paper
+parts:
+  - id: abstract
+    required: true
+    description: >
+      A good abstract will begin with a short description of the problem being
+      addressed, briefly describe the new data or analyses, then briefly states
+      the main conclusion(s) and how they are supported and uncertainties.
+  - id: authors
+    required: false
+    description: >
+      This part can be used to override the authors and affiliations defined in
+      the YAML front-matter. This can be used to include \altaffiliation or
+      \collaboration commands.
+  - id: acknowledgments
+    required: false
+    description: Any author acknowledgments
+  - id: facilities
+    required: false
+    description: >
+      To help institutions obtain information on the effectiveness of their 
+      telescopes the AAS Journals has created a group of keywords for telescope 
+      facilities.
+  - id: software
+    required: false
+    description: >
+      Similar to facilities, there is the optional software command to allow 
+      authors a place to specify which programs were used during the creation of 
+      the manuscript. Authors should list each code and include either a
+      citation or url to the code inside ()s when available.
+  - id: appendix
+    required: false
+    description: The contents of the appendix.
+
+doc:
+  - id: title
+    required: true
+  - id: authors
+  - id: bibliography
+
+options:
+  - id: style
+    type: choice
+    description: Set the formatting style for the document
+    default: modern
+    choices:
+      - twocolumn
+      - manuscript
+      - preprint
+      - preprint2
+      - modern
+      - RNAAS
+  - id: astrosymb
+    type: boolean
+    description: Load Astrosymb font and define \astrocommands
+    default: false
+  - id: tighten
+    type: boolean
+    description: Make \baselineskip slightly smaller; only works with the 'twocolumn' style
+    default: false
+  - id: times
+    type: boolean
+    description: Use times font instead of the default
+    default: false
+  - id: linenumbers
+    type: boolean
+    description: Turn on the lineno package
+    default: false
+  - id: trackchanges
+    type: boolean
+    description: Required to see the revision mark up and print its output
+    default: false
+  - id: longauthor
+    type: boolean
+    description: Print all affiliation information after each author name
+    default: false
+  - id: twocolappendix
+    type: boolean
+    description: Make the appendix have 2 columns
+    default: false
+  - id: anonymous
+    type: boolean
+    description: Do not show the authors, affiliations, or acknowledgments; for dual anonymous review
+    default: false
+
+  - id: received
+    type: string
+    required: false
+    description: Date when the manuscript was received
+  - id: revised
+    type: string
+    required: false
+    description: Date when the manuscript was revised
+  - id: accepted
+    type: string
+    required: false
+    description: Date when the manuscript was accepted
+
+  - id: submitjournal
+    type: string
+    required: false
+    description: Command to document which AAS Journal the manuscript was submitted to
+
+  - id: shorttitle
+    type: string
+    required: false
+    description: Short title for the running head
+  - id: shortauthors
+    type: string
+    required: false
+    description: Short author list for the running head
+
+  - id: watermark
+    type: string
+    required: false
+    description: An optional watermark for the first page
+
+files:
+  - template.tex
+  - aastex631.cls
+  - aasjournal.bst
+  - orcid-ID.png
+packages:
+  - amsmath
