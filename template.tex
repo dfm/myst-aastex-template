@@ -16,14 +16,20 @@
 ,anonymous
 [#- endif -#]]{aastex631}
 [- IMPORTS -]
-[# if options.received #]\received{[- options.received -]}[# endif #]
-[# if options.revised #]\revised{[- options.revised -]}[# endif #]
-[# if options.accepted #]\accepted{[- options.accepted -]}[# endif #]
-[# if options.submitjournal #]\received{[- options.submitjournal -]}[# endif #]
-[# if options.shorttitle #]\shorttitle{[- options.shorttitle -]}[# endif #]
-[# if options.shortauthors #]\shortauthors{[- options.shortauthors -]}[# endif #]
-[# if options.watermark #]\watermark{[- options.watermark -]}[# endif #]
-[# if parts.preamble #][- parts.preamble -][# endif #]
+[# if options.received #]\received{[- options.received -]}
+[# endif #]
+[# if options.revised #]\revised{[- options.revised -]}
+[# endif #]
+[# if options.accepted #]\accepted{[- options.accepted -]}
+[# endif #]
+[# if options.submitjournal #]\received{[- options.submitjournal -]}
+[# endif #]
+[# if options.shorttitle #]\shorttitle{[- options.shorttitle -]}
+[# endif #]
+[# if options.shortauthors #]\shortauthors{[- options.shortauthors -]}
+[# endif #]
+[# if options.watermark #]\watermark{[- options.watermark -]}
+[# endif #]
 \begin{document}
 
 \title{[-doc.title-]}
@@ -56,9 +62,8 @@
 [-parts.abstract-]
 \end{abstract}
 [# endif #]
-
 [# if doc.keywords #]
-\keywords{[- doc.keywords -]}
+\keywords{[- doc.keywords | join(" --- ") -]}
 [# endif #]
 
 [-CONTENT-]
@@ -68,20 +73,16 @@
 [- parts.acknowledgments -]
 \end{acknowledgments}
 [# endif #]
-
 [# if parts.facilities #]
 \facilities{[- parts.facilities -]}
 [# endif #]
-
 [# if parts.software #]
 \software{[- parts.software -]}
 [# endif #]
-
 [# if parts.appendix #]
 \appendix
 [- parts.appendix -]
 [# endif #]
-
 [# if doc.bibliography #]
 \bibliography{[- doc.bibliography -]}{}
 \bibliographystyle{aasjournal}

@@ -1,3 +1,5 @@
 _build
 example/_exports
 original
+node_modules
+*.json

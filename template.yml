@@ -15,11 +15,6 @@ tags:
   - paper
 
 parts:
-  - id: preamble
-    required: false
-    description: >
-      Any extra macros or packages that should be loaded before the document
-      can be included here.
   - id: abstract
     required: true
     description: >
